@@ -1,0 +1,6 @@
+# YST Digital - Secure Product Files Directory
+# Direct file access is FORBIDDEN. All downloads must route through download.php
+# with a valid HMAC-signed token verified against the database.
+
+Order Deny,Allow
+Deny from all

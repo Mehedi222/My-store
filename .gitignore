@@ -1,0 +1,36 @@
+# ============================
+# YST Digital - .gitignore
+# ============================
+
+# --- Sensitive Configuration ---
+# IMPORTANT: Copy config.php to config.example.php and fill in your own values.
+# Never commit real DB credentials or API keys.
+config.php
+
+# --- Secure Digital Files ---
+# Product ZIP/RAR files should NOT be committed to Git.
+secure/*.zip
+secure/*.rar
+secure/*.tar.gz
+secure/*.7z
+
+# --- Uploaded Media ---
+# User-uploaded product images - too large for Git
+assets/images/uploads/
+
+# --- OS & Editor Junk ---
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+.idea/
+.vscode/settings.json
+*.sublime-workspace
+
+# --- XAMPP / Server Logs ---
+*.log
+error_log
+
+# --- PHP Cache ---
+*.cache

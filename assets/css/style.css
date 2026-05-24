@@ -1,0 +1,290 @@
+/* style.css - Dynamic Styling System with HSL Theme Tokens */
+
+/* Theme Variables Definition */
+:root {
+    /* Light Mode HSL Palette */
+    --bg-color: hsl(210, 20%, 98%);
+    --card-bg: hsl(0, 0%, 100%);
+    --text-color: hsl(210, 24%, 16%);
+    --text-muted: hsl(210, 8%, 45%);
+    --primary-color: hsl(220, 90%, 56%);
+    --primary-glow: rgba(37, 99, 235, 0.15);
+    --accent-color: hsl(280, 80%, 60%);
+    --border-color: hsl(210, 14%, 90%);
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+    --shadow-inset: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    --navbar-height: 70px;
+    --mobile-nav-height: 65px;
+}
+
+[data-theme="dark"] {
+    /* Dark Mode HSL Palette */
+    --bg-color: hsl(220, 20%, 8%);
+    --card-bg: hsl(220, 18%, 13%);
+    --text-color: hsl(210, 17%, 98%);
+    --text-muted: hsl(210, 8%, 70%);
+    --primary-color: hsl(217, 90%, 65%);
+    --primary-glow: rgba(59, 130, 246, 0.15);
+    --accent-color: hsl(280, 80%, 70%);
+    --border-color: hsl(220, 12%, 20%);
+    --glass-bg: rgba(20, 24, 33, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.05);
+    --shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4);
+    --shadow-inset: inset 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Core Settings */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Outfit', sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
+    padding-bottom: 0;
+}
+
+/* On mobile, add bottom padding to prevent bottom navigation overlap */
+@media (max-width: 767.98px) {
+    body {
+        padding-bottom: calc(var(--mobile-nav-height) + 15px);
+    }
+}
+
+/* Typography & Visual Accents */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-premium {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color)) !important;
+}
+
+/* Premium Glassmorphic Cards */
+.card-glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.card-glass:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.15);
+}
+
+/* Buttons and Form Custom Styling */
+.btn-premium {
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: #fff !important;
+    border: none;
+    box-shadow: 0 4px 15px var(--primary-glow);
+}
+
+.btn-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--primary-glow);
+    opacity: 0.95;
+}
+
+.form-control-premium {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 12px;
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+}
+
+.form-control-premium:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px var(--primary-glow);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+/* Responsive Layout Adaptation */
+
+/* Desktop Header Navigation */
+.desktop-navbar {
+    height: var(--navbar-height);
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 1030;
+}
+
+/* Mobile Header Navigation */
+.mobile-appbar {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 1030;
+    display: none;
+}
+
+@media (max-width: 767.98px) {
+    .desktop-navbar {
+        display: none !important;
+    }
+    .mobile-appbar {
+        display: flex !important;
+    }
+}
+
+/* Mobile Bottom Navigation Bar (Native style) */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--mobile-nav-height);
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--glass-border);
+    box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.05);
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1040;
+    padding: 0 10px;
+}
+
+.bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 500;
+    flex: 1;
+    height: 100%;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.bottom-nav-item i {
+    font-size: 20px;
+    margin-bottom: 3px;
+    transition: transform 0.2s ease;
+}
+
+.bottom-nav-item.active {
+    color: var(--primary-color);
+}
+
+.bottom-nav-item.active i {
+    transform: translateY(-2px);
+}
+
+.bottom-nav-item .badge-pill {
+    position: absolute;
+    top: 5px;
+    right: 25%;
+    font-size: 10px;
+    padding: 3px 6px;
+    border-radius: 50%;
+}
+
+@media (max-width: 767.98px) {
+    .bottom-nav {
+        display: flex;
+    }
+}
+
+/* Product Card List - Grid on Desktop, Vertical Swipe-like list on Mobile */
+.product-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+@media (max-width: 767.98px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* Single column flow for mobile native app feel */
+    }
+    
+    .product-mobile-card {
+        display: flex;
+        flex-direction: row;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        overflow: hidden;
+        margin-bottom: 15px;
+        box-shadow: var(--shadow);
+    }
+    
+    .product-mobile-image {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+    
+    .product-mobile-details {
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+        overflow: hidden;
+    }
+}
+
+/* Micro-animations and Interactions */
+.hover-scale {
+    transition: transform 0.2s ease;
+}
+.hover-scale:hover {
+    transform: scale(1.03);
+}
+
+/* Theme Switcher Toggle styling */
+.theme-toggle-btn {
+    cursor: pointer;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+.theme-toggle-btn:hover {
+    background-color: var(--border-color);
+    transform: rotate(15deg);
+}
+
+/* Glassmorphism modal */
+.modal-content-glass {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+}
