@@ -10,7 +10,7 @@
             <!-- Brand Column -->
             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                 <h6 class="text-uppercase fw-bold mb-4 text-gradient">
-                    <i class="fas fa-cubes me-2"></i><?php echo htmlspecialchars(get_setting('site_name', 'YST Digital')); ?>
+                    <img src="assets/images/logo.svg" alt="My Store" height="30" class="navbar-logo">
                 </h6>
                 <p>
                     A premium digital asset store providing high-performance website templates, Flutter app codes, SaaS launch kits, and glassmorphic UI packages.
@@ -44,7 +44,7 @@
     
     <!-- Copyright Bar -->
     <div class="text-center p-4 border-top" style="background-color: rgba(0, 0, 0, 0.02);">
-        <?php echo get_setting('footer_text', '&copy; 2026 YST Digital. Sleek Solutions for Digital Creators.'); ?>
+        <?php echo get_setting('footer_text', '&copy; 2026 My Store. Sleek Solutions for Digital Creators.'); ?>
     </div>
 </footer>
 

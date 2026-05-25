@@ -130,6 +130,23 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1030;
 }
 
+/* Logo Image */
+.navbar-logo {
+    width: auto;
+    display: block;
+    transition: opacity 0.2s ease;
+}
+.navbar-logo:hover {
+    opacity: 0.85;
+}
+
+/* In dark mode: invert only the dark text part of the SVG logo */
+[data-theme="dark"] .navbar-logo {
+    filter: brightness(0) invert(1) drop-shadow(0 0 0 transparent);
+    /* Override: keep the blue accent, just lighten the whole mark */
+    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.3));
+}
+
 /* Mobile Header Navigation */
 .mobile-appbar {
     background: var(--glass-bg);

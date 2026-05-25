@@ -12,7 +12,7 @@ $user = get_logged_in_user();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - <?php echo htmlspecialchars(get_setting('site_name', 'YST Digital')); ?></title>
+    <title>Dashboard - <?php echo htmlspecialchars(get_setting('site_name', 'My Store')); ?></title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,8 +71,7 @@ $user = get_logged_in_user();
 <aside class="admin-sidebar d-none d-lg-block">
     <div class="px-4 mb-4">
         <a class="d-flex align-items-center text-reset" href="../index.php">
-            <i class="fas fa-cubes text-gradient fa-lg me-2"></i>
-            <span class="fw-bold text-gradient fs-5"><?php echo htmlspecialchars(get_setting('site_name', 'YST Digital')); ?></span>
+            <img src="../assets/images/logo.svg" alt="My Store" height="36" class="navbar-logo">
         </a>
         <div class="small text-muted mt-1">Admin Dashboard</div>
     </div>
@@ -117,8 +116,7 @@ $user = get_logged_in_user();
 <header class="navbar navbar-expand-lg d-lg-none sticky-top py-2 px-3 bg-white" style="background: var(--glass-bg); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); z-index: 100;">
     <div class="container-fluid justify-content-between align-items-center">
         <a class="d-flex align-items-center text-reset fw-bold" href="index.php">
-            <i class="fas fa-cubes text-gradient fa-lg me-2"></i>
-            <span class="text-gradient">YST Admin</span>
+            <img src="../assets/images/logo.svg" alt="My Store" height="30" class="navbar-logo">
         </a>
         <div class="dropdown">
             <button class="btn btn-link text-reset py-1 px-2 border border-color rounded dropdown-toggle shadow-0" type="button" data-mdb-toggle="dropdown" aria-expanded="false">

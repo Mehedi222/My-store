@@ -1,6 +1,8 @@
 <?php
 // login.php - User Login Page
-require_once 'includes/header.php';
+
+// ── All PHP logic MUST run before any HTML output ──
+require_once 'config.php';
 
 // Redirect if already logged in
 if (is_logged_in()) {
@@ -50,6 +52,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+
+// ── Now it is safe to output HTML ──
+require_once 'includes/header.php';
 ?>
 
 <div class="row justify-content-center align-items-center py-5">

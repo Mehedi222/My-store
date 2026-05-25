@@ -6,8 +6,7 @@
     <div class="container">
         <!-- Brand -->
         <a class="navbar-brand d-flex align-items-center" href="index.php">
-            <i class="fas fa-cubes text-gradient fa-lg me-2"></i>
-            <span class="fw-bold text-gradient"><?php echo htmlspecialchars(get_setting('site_name', 'YST Digital')); ?></span>
+            <img src="assets/images/logo.svg" alt="<?php echo htmlspecialchars(get_setting('site_name', 'MyStore')); ?>" height="40" class="navbar-logo">
         </a>
         
         <!-- Navbar Items -->
@@ -77,8 +76,7 @@
 <!-- Mobile Sticky AppBar -->
 <header class="mobile-appbar sticky-top py-2 px-3 justify-content-between align-items-center">
     <a class="d-flex align-items-center text-reset" href="index.php">
-        <i class="fas fa-cubes text-gradient fa-lg me-2"></i>
-        <span class="fw-bold text-gradient fs-5"><?php echo htmlspecialchars(get_setting('site_name', 'YST Digital')); ?></span>
+        <img src="assets/images/logo.svg" alt="<?php echo htmlspecialchars(get_setting('site_name', 'MyStore')); ?>" height="34" class="navbar-logo">
     </a>
     <div class="d-flex align-items-center gap-3">
         <!-- Theme Toggle -->

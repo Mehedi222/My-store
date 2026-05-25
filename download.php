@@ -74,7 +74,7 @@ if (isset($_GET['invoice'])) {
             
             <div class="row mb-5 align-items-center">
                 <div class="col-6">
-                    <h2 class="fw-bold text-primary mb-1"><i class="fas fa-cubes me-2"></i>YST Digital</h2>
+                    <img src="assets/images/logo.svg" alt="My Store" height="40">
                     <p class="text-muted small mb-0">Secure E-Commerce Digital Creator Store</p>
                 </div>
                 <div class="col-6 text-end">
@@ -144,7 +144,7 @@ if (isset($_GET['invoice'])) {
             
             <hr class="mt-5 mb-4">
             <div class="text-center text-muted small">
-                Thank you for your purchase from <strong>YST Digital</strong>. All files are securely kept under direct user dashboards.<br>
+                Thank you for your purchase from <strong>My Store</strong>. All files are securely kept under direct user dashboards.<br>
                 For disputes, please contact us quoting reference: <strong><?php echo htmlspecialchars($order['transaction_id']); ?></strong>
             </div>
         </div>
@@ -193,9 +193,9 @@ if (isset($_GET['token'])) {
             $zipFilename = tempnam(sys_get_temp_dir(), 'yst');
             
             if ($zip->open($zipFilename, ZipArchive::CREATE) === TRUE) {
-                $zip->addFromString('LICENSE.txt', "YST DIGITAL END-USER LICENSE AGREEMENT\n\nProduct: $productTitle\nCustomer: " . $user['name'] . "\nOrder ID: $order_id\nTransaction Reference: $txnId\n\nThis license grants a single user the commercial permission to utilize these digital resources in development, design, and personal structures. Reselling, sub-licensing, or direct redistribution is strictly prohibited under international copyright laws.\n\nThank you for choosing YST Digital.\n© 2026 YST Digital.");
+                $zip->addFromString('LICENSE.txt', "MY STORE END-USER LICENSE AGREEMENT\n\nProduct: $productTitle\nCustomer: " . $user['name'] . "\nOrder ID: $order_id\nTransaction Reference: $txnId\n\nThis license grants a single user the commercial permission to utilize these digital resources in development, design, and personal structures. Reselling, sub-licensing, or direct redistribution is strictly prohibited under international copyright laws.\n\nThank you for choosing My Store.\n© 2026 My Store.");
                 
-                $zip->addFromString('ReadMe.txt', "THANK YOU FOR YOUR PURCHASE!\n\nWe appreciate your support. Below is your product detail log:\n- Item Name: $productTitle\n- Order Reference ID: $order_id\n- Transaction Identifier: $txnId\n- Download Authorized: " . date('Y-m-d H:i:s') . "\n\nThis ZIP package was dynamically compiled and verified under YST Digital secure tokens.\nIf you require assistance, submit a query at support: ystdigital.com/contact.");
+                $zip->addFromString('ReadMe.txt', "THANK YOU FOR YOUR PURCHASE!\n\nWe appreciate your support. Below is your product detail log:\n- Item Name: $productTitle\n- Order Reference ID: $order_id\n- Transaction Identifier: $txnId\n- Download Authorized: " . date('Y-m-d H:i:s') . "\n\nThis ZIP package was dynamically compiled and verified under My Store secure tokens.\nIf you require assistance, please contact us via our support page.");
                 
                 // Add dummy source files to show a real, heavy project!
                 $zip->addFromString('source_code/config.php', "<?php\n// Product configurations\ndefine('PRODUCT_VERSION', '1.0.0');\n?>");

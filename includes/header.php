@@ -7,11 +7,11 @@ require_once __DIR__ . '/../config.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo htmlspecialchars(get_setting('site_name', 'YST Digital')); ?></title>
+    <title><?php echo htmlspecialchars(get_setting('site_name', 'My Store')); ?></title>
     
     <!-- Meta Descriptions SEO -->
     <meta name="description" content="Premium Digital Products for Creators. Find high-quality templates, SaaS boilerplate code, Flutter modules, and design kits.">
-    <meta name="author" content="YST Digital">
+    <meta name="author" content="My Store">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
